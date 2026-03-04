@@ -157,4 +157,52 @@ SELECT MAX(amount) AS max_payment FROM Payments;
 SELECT category_name, price_per_night
 FROM Room_Categories
 ORDER BY price_per_night DESC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    SELECT g.first_name, g.last_name, b.booking_id
+FROM Guests g
+JOIN Bookings b ON g.guest_id = b.guest_id;
+
+
+SELECT SUM(amount) AS total_income FROM Payments;
+
+
+SELECT guest_id, COUNT(booking_id) AS booking_count
+FROM Bookings
+GROUP BY guest_id
+HAVING COUNT(booking_id) > 1;
+
+
+
+
+SELECT * FROM Rooms
+WHERE category_id IN (SELECT category_id FROM Room_Categories WHERE price_per_night > 20000)
+AND status = 'Available';
+
+
+
+
+EXPLAIN ANALYZE SELECT * FROM Guests WHERE email = 'test@mail.com';
 LIMIT 1;

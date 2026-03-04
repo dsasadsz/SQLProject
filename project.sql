@@ -134,3 +134,27 @@ HAVING SUM(p.amount) > 50000;
 
 --Индекстердің тиімділігін тексеретін сұраныс (Қонақты телефон нөмірі арқылы жылдам іздеу):
 EXPLAIN ANALYZE SELECT * FROM Guests WHERE phone = '+77010000000';
+
+
+
+
+
+
+
+
+
+
+
+SELECT MAX(amount) AS max_payment FROM Payments;
+
+
+
+
+
+
+
+
+SELECT category_name, price_per_night
+FROM Room_Categories
+ORDER BY price_per_night DESC
+LIMIT 1;
